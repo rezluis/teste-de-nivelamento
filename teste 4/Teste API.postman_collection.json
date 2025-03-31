@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "1b68d20e-b108-47dc-929b-e9c16f6c3a23",
+		"name": "Teste API",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39448378"
+	},
+	"item": [
+		{
+			"name": "Get data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/buscar/?query=Unimed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"buscar",
+						""
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "Unimed"
+						}
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": [
+				{
+					"name": "Get data",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/buscar/?query=Unimed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"buscar",
+								""
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "Unimed"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Mon, 31 Mar 2025 19:33:47 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "5914"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resultados\": [\n        {\n            \"Registro_ANS\": 386596,\n            \"CNPJ\": 366982000130,\n            \"Razao_Social\": \"CENTRAL REGIONAL DAS COOPERATIVAS MÉDICAS - UNIMED CERRADO\",\n            \"Nome_Fantasia\": \"UNIMED CERRADO\",\n            \"Modalidade\": \"Cooperativa Médica\",\n            \"Logradouro\": \"RUA 8 A\",\n            \"Numero\": \"111\",\n            \"Complemento\": \"QD 13-A LOTE 9/18\",\n            \"Bairro\": \"SETOR AEROPORTO\",\n            \"Cidade\": \"Goiânia\",\n            \"UF\": \"GO\",\n            \"CEP\": 74075240,\n            \"DDD\": 62,\n            \"Telefone\": 92883684,\n            \"Fax\": \"\",\n            \"Endereco_eletronico\": \"danilo.firmino@unimedcerrado.coop.br\",\n            \"Representante\": \"SHIRLEY GONÇALVES DE PÁDUA MIGUEL\",\n            \"Cargo_Representante\": \"DIRETORA PRESIDENTE\",\n            \"Regiao_de_Comercializacao\": 5,\n            \"Data_Registro_ANS\": \"1998-12-24\"\n        },\n        {\n            \"Registro_ANS\": 367087,\n            \"CNPJ\": 87158507000156,\n            \"Razao_Social\": \"COOPERATIVA CENTRAL UNIMED DE COOPERATIVAS DE ASSISTÊNCIA À SAÚDE DO RIO GRANDE DO SUL LTDA.\",\n            \"Nome_Fantasia\": \"UNIMED RIO GRANDE DO SUL\",\n            \"Modalidade\": \"Cooperativa Médica\",\n            \"Logradouro\": \"RUA SANTA TEREZINHA\",\n            \"Numero\": \"340\",\n            \"Complemento\": \"\",\n            \"Bairro\": \"FARROUPILHA\",\n            \"Cidade\": \"Porto Alegre\",\n            \"UF\": \"RS\",\n            \"CEP\": 90040180,\n            \"DDD\": 5,\n            \"Telefone\": 132011370,\n            \"Fax\": 133303085,\n            \"Endereco_eletronico\": \"unimedrs@unimedrs.com.br\",\n            \"Representante\": \"PAULO ROBERTO DE OLIVEIRA WEBSTER\",\n            \"Cargo_Representante\": \"REPRESENTANTE JUNTO A ANS\",\n            \"Regiao_de_Comercializacao\": 3,\n            \"Data_Registro_ANS\": \"1998-12-18\"\n        },\n        {\n            \"Registro_ANS\": 313084,\n            \"CNPJ\": 25064148000110,\n            \"Razao_Social\": \"COOPERATIVA DE TRABALHO MEDICO DE ARAGUAÍNA - UNIMED ARAGUAÍNA\",\n            \"Nome_Fantasia\": \"UNIMED DE ARAGUAINA\",\n            \"Modalidade\": \"Cooperativa Médica\",\n            \"Logradouro\": \"AVENIDA TOCANTINS\",\n            \"Numero\": \"1232\",\n            \"Complemento\": \"LT- 17 QD RT-1\",\n            \"Bairro\": \"CENTRO\",\n            \"Cidade\": \"Araguaína\",\n            \"UF\": \"TO\",\n            \"CEP\": 77803120,\n            \"DDD\": \"\",\n            \"Telefone\": \"\",\n            \"Fax\": \"\",\n            \"Endereco_eletronico\": \"gerente@unimedaraguaina.com.br\",\n            \"Representante\": \"RENATO BORGES AZEVEDO\",\n            \"Cargo_Representante\": \"PRESIDENTE\",\n            \"Regiao_de_Comercializacao\": 5,\n            \"Data_Registro_ANS\": \"1998-12-24\"\n        },\n        {\n            \"Registro_ANS\": 318213,\n            \"CNPJ\": 85246916000189,\n            \"Razao_Social\": \"COOPERATIVA DE TRABALHO MEDICO REGIÃO DO PLANALTO SERRANO\",\n            \"Nome_Fantasia\": \"UNIMED LAGES\",\n            \"Modalidade\": \"Cooperativa Médica\",\n            \"Logradouro\": \"RUA FREI GABRIEL\",\n            \"Numero\": \"115\",\n            \"Complemento\": \"\",\n            \"Bairro\": \"CENTRO\",\n            \"Cidade\": \"Lages\",\n            \"UF\": \"SC\",\n            \"CEP\": 88502030,\n            \"DDD\": 49,\n            \"Telefone\": 32216600,\n            \"Fax\": \"\",\n            \"Endereco_eletronico\": \"adriana.zampirolo@unimedlages.coop.br\",\n            \"Representante\": \"ALCEU FERNANDES FILHO\",\n            \"Cargo_Representante\": \"PRESIDENTE\",\n            \"Regiao_de_Comercializacao\": 5,\n            \"Data_Registro_ANS\": \"1998-12-17\"\n        },\n        {\n            \"Registro_ANS\": 337188,\n            \"CNPJ\": 21490586000190,\n            \"Razao_Social\": \"COOPERATIVA DE TRABALHO MÉDICO DE POUSO ALEGRE\",\n            \"Nome_Fantasia\": \"UNIMED SUL MINEIRA\",\n            \"Modalidade\": \"Cooperativa Médica\",\n            \"Logradouro\": \"AV. MARECHAL CASTELO BRANCO\",\n            \"Numero\": \"75\",\n            \"Complemento\": \"\",\n            \"Bairro\": \"CEL EVARISTO AZEVEDO JUNQUEIRA\",\n            \"Cidade\": \"Pouso Alegre\",\n            \"UF\": \"MG\",\n            \"CEP\": 37550275,\n            \"DDD\": 35,\n            \"Telefone\": 34491800,\n            \"Fax\": \"\",\n            \"Endereco_eletronico\": \"unimed@unimedsulmineira.com.br\",\n            \"Representante\": \"MARCELO COUTO LUNA DE ALMEIDA\",\n            \"Cargo_Representante\": \"DIRETOR PRESIDENTE\",\n            \"Regiao_de_Comercializacao\": 5,\n            \"Data_Registro_ANS\": \"1998-12-18\"\n        },\n        {\n            \"Registro_ANS\": 317012,\n            \"CNPJ\": 85177194000158,\n            \"Razao_Social\": \"COOPERATIVA DE TRABALHO MÉDICO DO PLANALTO NORTE DE SANTA CATARINA LTDA\",\n            \"Nome_Fantasia\": \"UNIMED PLANALTO NORTE\",\n            \"Modalidade\": \"Cooperativa Médica\",\n            \"Logradouro\": \"AVENIDA DOM PEDRO II\",\n            \"Numero\": \"373\",\n            \"Complemento\": \"-\",\n            \"Bairro\": \"CENTRO\",\n            \"Cidade\": \"São Bento do Sul\",\n            \"UF\": \"SC\",\n            \"CEP\": 89280136,\n            \"DDD\": 47,\n            \"Telefone\": 36314183,\n            \"Fax\": 36314183,\n            \"Endereco_eletronico\": \"alisson.schneider@upn.unimedsc.com.br\",\n            \"Representante\": \"ERI GARCIA BUEMO\",\n            \"Cargo_Representante\": \"PRESIDENTE\",\n            \"Regiao_de_Comercializacao\": 5,\n            \"Data_Registro_ANS\": \"1998-12-17\"\n        },\n        {\n            \"Registro_ANS\": 313955,\n            \"CNPJ\": 71086698000158,\n            \"Razao_Social\": \"UNIMED ALEM PARAIBA COOPERATIVA DE TRABALHO MEDICO LTDA\",\n            \"Nome_Fantasia\": \"UNIMED ALÉM PARAIBA\",\n            \"Modalidade\": \"Cooperativa Médica\",\n            \"Logradouro\": \"RUA ADÃO ARAUJO\",\n            \"Numero\": \"181\",\n            \"Complemento\": \"\",\n            \"Bairro\": \"PORTO NOVO\",\n            \"Cidade\": \"Além Paraíba\",\n            \"UF\": \"MG\",\n            \"CEP\": 36660000,\n            \"DDD\": 32,\n            \"Telefone\": 34662233,\n            \"Fax\": 34662233,\n            \"Endereco_eletronico\": \"unimedap@unimedalemparaiba.com.br\",\n            \"Representante\": \"BRENO MELO FERREIRA COSTA \",\n            \"Cargo_Representante\": \"DIRETOR PRESIDENTE\",\n            \"Regiao_de_Comercializacao\": 5,\n            \"Data_Registro_ANS\": \"1998-12-17\"\n        },\n        {\n            \"Registro_ANS\": 354996,\n            \"CNPJ\": 42946061000196,\n            \"Razao_Social\": \"UNIMED ALFENAS COOPERATIVA DE TRABALHO MEDICO\",\n            \"Nome_Fantasia\": \"UNIMED ALFENAS\",\n            \"Modalidade\": \"Cooperativa Médica\",\n            \"Logradouro\": \"RUA PRESIDENTE ARTUR BERNARDES\",\n            \"Numero\": \"189\",\n            \"Complemento\": \"\",\n            \"Bairro\": \"CENTRO\",\n            \"Cidade\": \"Alfenas\",\n            \"UF\": \"MG\",\n            \"CEP\": 37130000,\n            \"DDD\": 35,\n            \"Telefone\": 37130000,\n            \"Fax\": 36981021,\n            \"Endereco_eletronico\": \"unimed@unimedalfenas.com.br\",\n            \"Representante\": \"CLAUDIO LAUDARES MOREIRA\",\n            \"Cargo_Representante\": \"DIRETOR PRESIDENTE\",\n            \"Regiao_de_Comercializacao\": 5,\n            \"Data_Registro_ANS\": \"1998-12-18\"\n        },\n        {\n            \"Registro_ANS\": 324159,\n            \"CNPJ\": 57214900000159,\n            \"Razao_Social\": \"UNIMED ALTA MOGIANA COOPERATIVA DE TRABALHO MÉDICO\",\n            \"Nome_Fantasia\": \"UNIMED ALTA MOGIANA\",\n            \"Modalidade\": \"Cooperativa Médica\",\n            \"Logradouro\": \"AVENIDA DEZ\",\n            \"Numero\": \"685\",\n            \"Complemento\": \"\",\n            \"Bairro\": \"CENTRO\",\n            \"Cidade\": \"Orlândia\",\n            \"UF\": \"SP\",\n            \"CEP\": 14620000,\n            \"DDD\": 16,\n            \"Telefone\": 38204466,\n            \"Fax\": 38204426,\n            \"Endereco_eletronico\": \"secretaria@unimedaltamogiana.com.br\",\n            \"Representante\": \"MARCELO GONÇALVES JUNQUEIRA LEITE\",\n            \"Cargo_Representante\": \"DIRETOR PRESIDENTE\",\n            \"Regiao_de_Comercializacao\": 5,\n            \"Data_Registro_ANS\": \"1998-12-18\"\n        },\n        {\n            \"Registro_ANS\": 343684,\n            \"CNPJ\": 88732318000108,\n            \"Razao_Social\": \"UNIMED ALTO DA SERRA - SOCIEDADE COOPERATIVA DE SERVIÇO MÉDICO LTDA.\",\n            \"Nome_Fantasia\": \"UNIMED ALTO DA SERRA\",\n            \"Modalidade\": \"Cooperativa Médica\",\n            \"Logradouro\": \"RUA XV DE NOVEMBRO\",\n            \"Numero\": \"556\",\n            \"Complemento\": \"\",\n            \"Bairro\": \"CENTRO\",\n            \"Cidade\": \"Vacaria\",\n            \"UF\": \"RS\",\n            \"CEP\": 95200000,\n            \"DDD\": 54,\n            \"Telefone\": 32321755,\n            \"Fax\": 32322588,\n            \"Endereco_eletronico\": \"gerencia@unimed-as.com.br\",\n            \"Representante\": \"GEORGE ARTUR MATTOS SILVESTRE\",\n            \"Cargo_Representante\": \"PRESIDENTE\",\n            \"Regiao_de_Comercializacao\": 5,\n            \"Data_Registro_ANS\": \"1998-12-23\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
